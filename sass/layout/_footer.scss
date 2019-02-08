@@ -1,0 +1,15 @@
+.footer {
+    background-color: $color-primary;
+    padding: 5rem 0;
+    font-size: 1.4rem;
+    border-top: 1px solid $color-grey;
+
+    @include respond(phone){
+        padding: 3rem 0;
+        font-size: 1.1rem;
+    }
+    @include respond(sm-phone){
+        padding: 2rem 0;
+        font-size: 1rem;
+    }
+}

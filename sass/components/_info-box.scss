@@ -1,0 +1,33 @@
+.info-box {
+    padding-right: 15rem;
+
+    @include respond(desktop){
+        padding-right: 5rem;
+    }
+    
+    @include respond(tab-land){
+        padding-right: 2rem;
+    }
+
+    @include respond(phone){
+        width: inherit;
+        padding: 0;
+    }
+
+    &__text {
+        font-size: $default-font-size;
+        font-weight: 100;
+        letter-spacing: .1rem;
+        text-align: justify;
+        text-justify: inter-word;
+
+        @include respond(phone){
+            padding: 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        &:not(:last-child){
+            margin-bottom: 3rem;
+        }
+    }
+}

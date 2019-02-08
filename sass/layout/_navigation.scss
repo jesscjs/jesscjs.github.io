@@ -1,0 +1,102 @@
+.navigation {
+    position: fixed;
+    top: 25rem;
+    right: 10rem;
+    animation: fade 7s ease;
+    transition: all .2s;
+
+    @include respond(desktop){
+        right: 5rem;
+    }
+
+    @include respond(tab-land){
+        top: 20rem;
+        right: 3rem;
+    }
+    @include respond(tab-port){
+        top: 87.5vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @include respond(phone){
+        width: 100vw;
+    }
+
+    &__list {
+        list-style: none;
+        background-color: transparent;
+        display: inline-table;
+
+        @include respond(phone){
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__item {
+        display: block;
+        font-size: 5rem;
+        background-color: transparent;
+
+
+        &:not(:last-child){
+            margin-bottom: 3rem;
+        }
+        
+        @include respond(tab-land){
+            font-size: 4rem;
+        }
+
+        @include respond(tab-port){
+            display: inline-block;
+            &:not(:last-child){
+                margin-right: 2rem;
+            }
+        }
+
+        @include respond(phone) {
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+        @include respond(sm-phone) {
+            display: inline-block;
+            font-size: 2rem;
+        }
+    }
+
+    &__link {
+
+        border: 1px solid transparent;
+        padding: 2rem;
+
+        @include respond(sm-phone) {
+            padding: 1rem;
+        }
+
+        &:link,
+        &:visited {
+            color: $color-grey;
+            text-decoration: none;
+            display: block;
+            transition: all .2s;
+            background-color: transparent;
+        }
+
+        &:hover,
+        &:focus {
+            transition: all .2s;
+            box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            transform: scale(1.1);
+            color: $color-grey;
+            padding: 2rem;
+            @include respond(sm-phone) {
+                padding: .5rem;
+            }
+            background-color: transparent;
+            border: 1px solid $color-grey;
+            outline-style: none;
+        }
+    }
+}
